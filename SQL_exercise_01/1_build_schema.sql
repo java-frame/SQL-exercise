@@ -1,4 +1,10 @@
 -- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
+-- 文件作用说明: 建表语句和数据集
+/**
+ 单词:
+ Manufacturers: 经销商
+ Products: 产品
+**/
 
 CREATE TABLE Manufacturers (
   Code INTEGER,
@@ -15,6 +21,7 @@ CREATE TABLE Products (
   FOREIGN KEY (Manufacturer) REFERENCES Manufacturers(Code)
 ) ENGINE=INNODB;
 
+-- 一些经销商数据
 INSERT INTO Manufacturers(Code,Name) VALUES(1,'Sony');
 INSERT INTO Manufacturers(Code,Name) VALUES(2,'Creative Labs');
 INSERT INTO Manufacturers(Code,Name) VALUES(3,'Hewlett-Packard');
@@ -22,6 +29,7 @@ INSERT INTO Manufacturers(Code,Name) VALUES(4,'Iomega');
 INSERT INTO Manufacturers(Code,Name) VALUES(5,'Fujitsu');
 INSERT INTO Manufacturers(Code,Name) VALUES(6,'Winchester');
 
+-- 一些产品数据
 INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(1,'Hard drive',240,5);
 INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(2,'Memory',120,6);
 INSERT INTO Products(Code,Name,Price,Manufacturer) VALUES(3,'ZIP drive',150,4);
